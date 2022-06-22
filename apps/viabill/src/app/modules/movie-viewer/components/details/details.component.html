@@ -1,0 +1,22 @@
+<ng-container *ngIf="details$ | async as details">
+	<section class="details">
+		<div class="details__image">
+			<img src="{{ details.poster_url }}" alt="{{ details.title }}" />
+		</div>
+		<div class="details__article">
+			<div class="details__article__item">
+				<h4 class="details__article__item__label">{{ labels.title }}</h4>
+				<p class="details__article__item__data">{{ details.title }}</p>
+			</div>
+			<div class="details__article__item">
+				<h4 class="details__article__item__label">{{ labels.homepage }}</h4>
+				<a class="details__article__item__data" href="{{ details.homepage }}">{{ details.homepage }}</a>
+			</div>
+			<div class="details__article__item">
+				<h4 class="details__article__item__label">{{ labels.overview }}</h4>
+				<p class="details__article__item__data">{{ details.overview }}</p>
+			</div>
+		</div>
+	</section>
+</ng-container>
+

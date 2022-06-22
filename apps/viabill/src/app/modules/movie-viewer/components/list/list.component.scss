@@ -1,0 +1,19 @@
+.navbar {
+  padding: 25px 50px;
+
+  &__list {
+    &__item {
+      padding-bottom: 15px;
+      transition: all 0.5s;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: 900;
+      }
+
+      .active {
+        font-weight: 600;
+      }
+    }
+  }
+}

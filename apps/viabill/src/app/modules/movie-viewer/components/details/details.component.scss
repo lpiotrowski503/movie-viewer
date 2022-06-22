@@ -1,0 +1,22 @@
+.details {
+  display: flex;
+  padding: 25px 50px;
+
+  &__article {
+    padding: 0 50px;
+
+    &__item {
+      margin-bottom: 50px;
+
+      &__label {
+        margin-top: 0;
+        margin-bottom: 5px;
+      }
+
+      &__data {
+        margin: 0;
+      }
+    }
+
+  }
+}

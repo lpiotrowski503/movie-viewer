@@ -1,0 +1,14 @@
+<ng-container *ngIf="{ items: items$ | async, activeId: activeId$ | async } as ctx">
+	<nav class="navbar">
+		<ul class="navbar__list">
+			<ng-container *ngFor="let item of ctx.items">
+				<li class="navbar__list__item">
+					<a [routerLink]="['/movie-viewer', item.id]" [ngClass]="{ active: item.id === ctx.activeId }">
+						{{ item.title }}
+					</a>
+				</li>
+			</ng-container>
+		</ul>
+	</nav>
+</ng-container>
+

@@ -1,0 +1,24 @@
+@import '../../../assets/variables';
+
+.movie-viewer {
+  display: flex;
+  flex-direction: column;
+
+  &__main {
+    display: flex;
+    height: calc(100vh - 80px);
+
+    &__list {
+      display: flex;
+      min-width: 500px;
+      border-right: 1px solid $GREY_600;
+      background: $DEEP_PURPLE_100;
+    }
+
+    &__details {
+      display: flex;
+      flex-grow: 1;
+      background: $DEEP_PURPLE_50;
+    }
+  }
+}

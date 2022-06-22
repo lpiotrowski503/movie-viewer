@@ -1,0 +1,15 @@
+@import '../assets/variables';
+
+.app {
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    padding: 0 50px;
+    display: flex;
+    align-items: center;
+    background: $HEADER_BACKGROUND;
+    color: $FONT_COLOR_LIGHT;
+    height: 80px;
+  }
+}

@@ -1,1 +1,21 @@
 /* You can add global styles to this file, and also import other style files */
+
+@import './assets/variables';
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  color: $FONT_COLOR_DARK
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
