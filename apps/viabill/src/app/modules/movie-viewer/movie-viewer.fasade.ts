@@ -3,7 +3,7 @@ import { Observable } from 'rxjs';
 import { Store } from '@ngrx/store';
 import { LoadList, LoadItem } from './movie-viewer.actions';
 import { AppState } from '../../store/app.state';
-import { Item, List } from '../../interfaces/list.interface';
+import { Item, Label, List } from '../../interfaces/list.interface';
 
 @Injectable({
 	providedIn: 'root',
@@ -25,6 +25,10 @@ export class MovieViewerFasade {
 
 	public selectMovieDetails(): Observable<Item> {
 		return this.store.select((state) => state.movieViewer.details);
+	}
+
+	public selectLabels(): Observable<Label[]> {
+		return this.store.select((state) => state.movieViewer.labels);
 	}
 }
 

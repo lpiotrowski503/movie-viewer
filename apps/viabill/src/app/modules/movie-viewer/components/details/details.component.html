@@ -1,22 +1,29 @@
-<ng-container *ngIf="details$ | async as details">
-	<section class="details">
-		<div class="details__image">
-			<img src="{{ details.poster_url }}" alt="{{ details.title }}" />
-		</div>
-		<div class="details__article">
-			<div class="details__article__item">
-				<h4 class="details__article__item__label">{{ labels.title }}</h4>
-				<p class="details__article__item__data">{{ details.title }}</p>
+<ng-container *ngIf="{ details: details$ | async, labels: labels$ | async } as ctx">
+	<ng-container *ngIf="ctx.details">
+		<section class="details">
+			<div class="details__image">
+				<ng-container *ngIf="ctx.details?.poster_url">
+					<img src="{{ ctx.details?.poster_url }}" alt="{{ ctx.details?.title }}" />
+				</ng-container>
 			</div>
-			<div class="details__article__item">
-				<h4 class="details__article__item__label">{{ labels.homepage }}</h4>
-				<a class="details__article__item__data" href="{{ details.homepage }}">{{ details.homepage }}</a>
+			<div class="details__article">
+				<ng-container *ngFor="let label of ctx?.labels">
+					<div class="details__article__item">
+						<h4 class="details__article__item__label">{{ label.name }}</h4>
+						<p *ngIf="label.isTextType" class="details__article__item__data">{{ ctx.details?.[label.key] }}</p>
+						<a
+							*ngIf="label.isLinkType"
+							class="details__article__item__data"
+							href="{{ ctx.details?.[label.key] }}"
+							>{{ ctx.details?.[label.key] }}</a
+						>
+						<p *ngIf="label.isTextArrayType" class="details__article__item__data">
+							{{ prepareArrayText(ctx.details?.[label.key], label.arrayProperty ?? '') }}
+						</p>
+					</div>
+				</ng-container>
 			</div>
-			<div class="details__article__item">
-				<h4 class="details__article__item__label">{{ labels.overview }}</h4>
-				<p class="details__article__item__data">{{ details.overview }}</p>
-			</div>
-		</div>
-	</section>
+		</section>
+	</ng-container>
 </ng-container>
 

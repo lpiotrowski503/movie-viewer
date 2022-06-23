@@ -5,24 +5,54 @@ import * as MovieViewerActions from './movie-viewer.actions';
 const initialState: MovieViewer = {
 	items: {},
 	details: {},
+	labels: [
+		{
+			name: 'Title:',
+			key: 'title',
+			isTextType: true,
+		},
+		{
+			name: 'Genres:',
+			key: 'genres',
+			isTextArrayType: true,
+			arrayProperty: 'name',
+		},
+		{
+			name: 'Vote average:',
+			key: 'vote_average',
+			isTextType: true,
+		},
+		{
+			name: 'Vote count:',
+			key: 'vote_count',
+			isTextType: true,
+		},
+		{
+			name: 'Home page:',
+			key: 'homepage',
+			isLinkType: true,
+		},
+		{
+			name: 'Overview:',
+			key: 'overview',
+			isTextType: true,
+		},
+	],
 };
 
 export function MovieViewerReducer(state: MovieViewer = initialState, action: MovieViewerActions.Actions): MovieViewer {
 	switch (action.type) {
 		case MovieViewerActions.MovieViewerActionTypes.LOAD_LIST_SUCCESS:
+			console.log(1, action.response);
 			return { ...state, items: action.response };
 
 		case MovieViewerActions.MovieViewerActionTypes.LOAD_ITEM_SUCCESS:
-			console.log(1, environment.basePath);
 			console.log(2, action.response);
 			return {
 				...state,
 				details: {
 					...action.response,
 					poster_url: `${environment.baseImageUrl}/w500${action.response.poster_path}`,
-					// poster_url: `${environment.basePath}/${environment.version}${action.response.poster_path}?${
-					// 	'api_key=' + environment.apiKey
-					// }`,
 				},
 			};
 
