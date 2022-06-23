@@ -43,11 +43,9 @@ const initialState: MovieViewer = {
 export function MovieViewerReducer(state: MovieViewer = initialState, action: MovieViewerActions.Actions): MovieViewer {
 	switch (action.type) {
 		case MovieViewerActions.MovieViewerActionTypes.LOAD_LIST_SUCCESS:
-			console.log(1, action.response);
 			return { ...state, items: action.response };
 
 		case MovieViewerActions.MovieViewerActionTypes.LOAD_ITEM_SUCCESS:
-			console.log(2, action.response);
 			return {
 				...state,
 				details: {
