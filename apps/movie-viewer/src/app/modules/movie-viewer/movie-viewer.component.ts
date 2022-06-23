@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-	selector: 'viabill-movie-viewer',
+	selector: 'movie-viewer-core',
 	templateUrl: './movie-viewer.component.html',
 	styleUrls: ['./movie-viewer.component.scss'],
 })

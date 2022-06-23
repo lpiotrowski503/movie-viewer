@@ -1,11 +1,11 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Item, Label } from 'apps/viabill/src/app/interfaces/list.interface';
+import { Item, Label } from 'apps/movie-viewer/src/app/interfaces/list.interface';
 import { Subscription, Observable } from 'rxjs';
 import { MovieViewerFasade } from '../../movie-viewer.fasade';
 
 @Component({
-	selector: 'viabill-details',
+	selector: 'movie-viewer-details',
 	templateUrl: './details.component.html',
 	styleUrls: ['./details.component.scss'],
 	changeDetection: ChangeDetectionStrategy.OnPush,

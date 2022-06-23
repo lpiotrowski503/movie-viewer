@@ -1,14 +1,14 @@
 {
-  "name": "viabill",
+  "name": "movie-viewer",
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
     "ng": "nx",
     "postinstall": "node ./decorate-angular-cli.js && ngcc --properties es2020 browser module main",
     "start": "nx serve",
-    "build": "nx run viabill:build",
+    "build": "nx run movie-viewer:build",
     "test": "nx test",
-    "serve": "nx run viabill:serve"
+    "serve": "nx run movie-viewer:serve"
   },
   "private": true,
   "dependencies": {

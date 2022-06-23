@@ -1,4 +1,4 @@
-import { environment } from 'apps/viabill/src/environments/environment';
+import { environment } from 'apps/movie-viewer/src/environments/environment';
 import { MovieViewer } from '../../interfaces/list.interface';
 import * as MovieViewerActions from './movie-viewer.actions';
 

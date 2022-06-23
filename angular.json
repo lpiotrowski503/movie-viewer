@@ -2,7 +2,7 @@
   "$schema": "./node_modules/nx/schemas/workspace-schema.json",
   "version": 2,
   "projects": {
-    "viabill": "apps/viabill",
-    "viabill-e2e": "apps/viabill-e2e"
+    "movie-viewer": "apps/movie-viewer",
+    "movie-viewer-e2e": "apps/movie-viewer-e2e"
   }
 }
